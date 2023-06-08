@@ -54,19 +54,38 @@ D7 = X Y Z
 ![image](https://user-images.githubusercontent.com/36288975/171543866-5a6eace6-8683-49d7-9c4f-a7cb30ec3035.png)
 ## Figure -04 8 to 3 Decoder implementation 
 
-### Procedure
-/* write all the steps invloved */
-
 
 
 ### PROGRAM 
 /*
 Program for Endocers and Decoders  and verify its truth table in quartus using Verilog programming.
-Developed by: 
-RegisterNumber:  
+Developed by: keerthana jayasri s k
+RegisterNumber:212222110019  
 */
 
+ENCODER
+module EX8(a,b,c,d0,d1,d2d3,d4,d5,d6,d7);
+output a,b,c;
+input d0,d1,d2,d3,d4,d5,d6,d7;
+or(a,d4,d5,d6,d7);
+or(b,d2,d3,d6,d7);
+or(c,d1,d3,d5,d7);
+endmodule
 
+
+DECODER
+module EX8(d0,d1,d2,d3,d4,d5,d6,d7,a,b,c);
+input a,b,c;
+output d0,d1,d2,d3,d4,d5,d6,d7;
+assign d0 = (~a&~b&~c);
+assign d1 = (~a&~b&c);
+assign d2 = (~a&b&~c);
+assign d3 =(~a&b&c);
+assign d4 = (a&~b&~c);
+assign d5 = (a&~b&c);
+assign d6 = (a&b&~c);
+assign d7 = (a&b&c);
+endmodule
 
 
 
@@ -74,19 +93,35 @@ RegisterNumber:
 ### RTL LOGIC  
 
 
+ENCODER
 
 
+![image](https://github.com/keerthanajayasri/Experiment-08-Encoders-and-decoders-/assets/121163440/4f8b76a3-31e8-4a34-8f40-eceb5a28809f)
+
+
+
+DECODER
+
+
+![image](https://github.com/keerthanajayasri/Experiment-08-Encoders-and-decoders-/assets/121163440/708b4bdd-971a-411e-b361-773c8cad561d)
 
 
 
 
 ### TIMING DIGRAMS  
 
+ENCODER
+
+![image](https://github.com/keerthanajayasri/Experiment-08-Encoders-and-decoders-/assets/121163440/4d26e918-b383-41ae-824b-bb0bf43bf84c)
 
 
 
 
 ### TRUTH TABLE 
+ENCODER
+
+
+![image](https://github.com/keerthanajayasri/Experiment-08-Encoders-and-decoders-/assets/121163440/9e048fb6-b468-4e32-8def-20399346e08e)
 
 
 
@@ -94,3 +129,4 @@ RegisterNumber:
 
 
 ### RESULTS 
+Thus the program to design Encoder and Decoder are completed
